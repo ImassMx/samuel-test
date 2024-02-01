@@ -64,3 +64,133 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+# Docs
+
+## API Reference
+
+### Auth
+#### Register
+
+| Authentcation |
+|------------------------- |
+ | No|
+```http
+  POST /api/register
+```
+
+| Parameter | Type     | Description|
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required** |
+| `email` | `email` | **Required** |
+| `password` | `string` | **Required** |
+
+#### Login
+
+| Authentcation |
+|------------------------- |
+ | No|
+```http
+  POST /api/register
+```
+
+| Parameter | Type     | Description|
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required** |
+| `email` | `email` | **Required** |
+| `password` | `string` | **Required** |
+
+#### Logout
+
+| Authentcation |
+|------------------------- |
+ | Bearer token provided by login|
+```http
+  POST /api/logout
+```
+
+| Parameter | Type     | Description|
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required** |
+| `email` | `email` | **Required** |
+| `password` | `string` | **Required** |
+| `token` | `string` | **Required** |
+
+### Cotizacion
+#### Post
+
+| Authentcation |
+|------------------------- |
+ | Bearer token provided by login|
+```http
+  POST /api/cotizacion
+```
+
+| Parameter | Type     | Description|
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | **Required** |
+| `lastname` | `string` | **Required** |
+| `email` | `email` | **Required** |
+| `phone` | `string, phone` | **Required** |
+
+#### Get
+
+| Authentcation |
+|------------------------- |
+ | Bearer token provided by login|
+```http
+  Get /api/cotizacion/${id}
+```
+
+| Parameter | Type     | Description|
+| :-------- | :------- | :------------------------- |
+| `id` | `query: numeric` | **Required** |
+
+#### Pagination
+
+| Authentcation |
+|------------------------- |
+ | Bearer token provided by login|
+```http
+  Get /api/cotizacion
+```
+
+| Parameter | Type     | Description|
+| :-------- | :------- | :------------------------- |
+| `limit` | `query: numeric` | **Optional** |
+| `orderBy` | `query: tableColumn` | **Optional** |
+| `order` | `query: desc, asc` | **Optional** |
+| `page` | `query: numeric` | **Optional** |
+
+#### Delete
+
+| Authentcation |
+|------------------------- |
+ | Bearer token provided by login|
+```http
+  Delete /api/cotizacion/${id}
+```
+
+| Parameter | Type     | Description|
+| :-------- | :------- | :------------------------- |
+| `id` | `query: numeric` | **Required** |
+
+#### Put
+
+| Authentcation |
+|------------------------- |
+ | Bearer token provided by login|
+```http
+  POST /api/cotizacion/${id}
+```
+
+| Parameter | Type     | Description|
+| :-------- | :------- | :------------------------- |
+| `id` | `query: numeric` | **Required** |
+| `name` | `string` | **Required** |
+| `lastname` | `string` | **Required** |
+| `email` | `email` | **Required** |
+| `phone` | `string, phone` | **Required** |
+
+
